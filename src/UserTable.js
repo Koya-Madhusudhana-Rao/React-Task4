@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './UserTable.css';
-
 function UserTable() {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
-    // Fetch data from the provided URL
     fetch('https://dummyjson.com/users')
       .then((response) => response.json())
       .then((data) => {
@@ -25,7 +22,6 @@ function UserTable() {
         setUsers(filteredData);
       });
   }, []);
-
   return (
     <div className='body'>
         <div >
@@ -34,31 +30,31 @@ function UserTable() {
                 <table >
                     <thead >
                     <tr>
-                        <th>Sno</th>
-                        <th>ProfilePic</th>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Gender</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>Domain</th>
-                        <th>IP</th>
-                        <th>University</th>
+                        <th id="id3">Sno</th>
+                        <th id="id2">Profile Pic</th>
+                        <th id="id3">First Name</th>
+                        <th id="id3">Last Name</th>
+                        <th id="id3">Gender</th>
+                        <th id="id3">E-mail</th>
+                        <th id="id3">Username</th>
+                        <th id="id3">Domain</th>
+                        <th id="id3">IP</th>
+                        <th id="id4">University</th>
                     </tr>
                     </thead>
                     <tbody>
                     {users.map((user) => (
                         <tr key={user.Sno}>
                         <td>{user.Sno}</td>
-                        <td className="profile-pic-cell" ><img src={user.ProfilePic} alt={`Profile of ${user.Firstname}`} /></td>
-                        <td>{user.Firstname}</td>
-                        <td>{user.Lastname}</td>
-                        <td>{user.Gender}</td>
-                        <td>{user.Email}</td>
-                        <td>{user.Username}</td>
-                        <td>{user.Domain}</td>
-                        <td>{user.IP}</td>
-                        <td>{user.University}</td>
+                        <td className="profile-pic-cell" ><img src={user.ProfilePic} alt={Profile of ${user.Firstname}} /></td>
+                        <td id="id1">{user.Firstname}</td>
+                        <td id="id1">{user.Lastname}</td>
+                        <td id="id1">{user.Gender}</td>
+                        <td id="id1">{user.Email}</td>
+                        <td id="id1">{user.Username}</td>
+                        <td id="id1">{user.Domain}</td>
+                        <td id="id1">{user.IP}</td>
+                        <td id="id1">{user.University}</td>
                         </tr>
                     ))}
                     </tbody>
@@ -68,5 +64,4 @@ function UserTable() {
     </div>
   );
 }
-
 export default UserTable;
